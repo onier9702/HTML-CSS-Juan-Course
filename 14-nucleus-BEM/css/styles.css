@@ -29,6 +29,9 @@ h2 {
 h3 {
     font-size: 3rem;
 }
+h4 {
+    font-size: 2rem;
+}
 a {
     text-decoration: none;
 }
@@ -36,10 +39,23 @@ img {
     max-width: 100%;
     display: block;
 }
-.container {
+/* Use this instead of container */
+/* Apply to all the classes end with __container */
+[class$="__container"] {
     max-width: 120rem;
     margin: 0 auto;
     width: 90%;
+}
+/* It is not necessary because the code above */
+/* .container {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+} */
+
+[class$="__heading"] {
+    text-align: center;
+    margin-bottom: 5rem;
 }
 
 /* Header */
@@ -96,7 +112,6 @@ img {
 }
 
 .header__heading {
-    text-align: center;
     font-size: 2.2rem;
 }
 @media (min-width: 768px) { 
@@ -153,4 +168,194 @@ img {
         color: var(--white);
     }
     
+}
+
+/* Nucleus */
+.nucleus {
+    margin-top: 3rem;
+}
+
+.nucleus__grid {
+    display: flex;
+    flex-direction: column-reverse;
+}
+@media (min-width: 768px) { 
+    .nucleus__grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 5rem;
+        align-items: center;
+    }
+    
+}
+
+/* List */
+.list {
+
+}
+.list__element {
+    background-color: var(--white);
+    box-shadow: 0px 0px 8px 3px rgb(0 0 0 / .15) ;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition-property: transform;
+    transition-duration: .5s;
+}
+.list__element:hover {
+    transform: scale(1.1);
+}
+@media (min-width: 768px) { 
+    .list__element--2col {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.list_heading {
+   margin: 0;
+   color: var(--primary);
+}
+.list__number {
+    color: var(--primary);
+    font-size: 4.2rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+@media (min-width: 768px) { 
+    .list__number {
+        font-size: 3.2rem;
+        flex-basis: 20rem;
+        text-align: right;
+        margin-right: 2rem;
+    }
+}
+.list__text {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Security */
+.security {
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    padding: 25rem 0;
+    position: relative;
+    margin: 10rem 0;
+    overflow: hidden;
+}
+/* OJO: Solution diagonal IMPORTANT */
+.security::before,
+.security::after {
+    background-color: var(--white);
+    content: '';
+    height: 30rem;
+    width: 120%;
+    position: absolute;
+}
+.security::before {
+    top: -10rem;
+    left: 0;
+    transform: rotate(3deg);
+}
+.security::after {
+    bottom: -20rem;
+    left: -1rem;
+    transform: rotate(3deg);
+}
+
+.security__heading {
+    color: var(--white);
+    margin: 2rem 0;
+}
+
+@media (min-width: 768px) { 
+    .security__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+        align-items: center;
+    }
+}
+
+.security__image {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.security__image__img {
+    max-width: 70%;
+}
+
+/* Commissions */
+@media (min-width: 768px) { 
+    .commissions__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+        align-items: center;
+    }
+}
+/* @media (min-width: 998px) { 
+    .commissions__grid {
+        align-items: center;
+    }
+} */
+
+.commissions__text {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+/* Comments */
+.comments {
+    background-color: var(--primary);
+    padding: 4rem 0;
+}
+.commments__heading {
+    color: var(--white);
+    margin: 0 0 3rem 0;
+}
+.comments__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+@media (min-width: 768px) { 
+    .comments__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+.comments__content {
+    background-color: var(--white);
+    padding: 1.5rem;
+    position: relative;
+}
+.comments__text {
+    margin: 0;
+    padding-left: 3rem;
+    font-size: medium;
+}
+.comments__text::before {
+    content: '';
+    position: absolute;
+    background-image: url(../img/comilla.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2rem;
+    height: 3rem;
+    top: 2rem;
+    left: 1rem;
+    width: 3rem;
+}
+.comments__author {
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0;
+    text-align: right;
 }

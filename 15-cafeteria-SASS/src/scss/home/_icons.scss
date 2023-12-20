@@ -1,0 +1,26 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.icons {
+    margin-top: 5rem;
+
+    .icons_list {
+
+        @media (min-width: 768px) { 
+            // IMPORTANT: Use this mixins to generate grid code and pass it the column and column gap
+            @include m.grid(3, 5rem);
+        }
+        li {
+            img {
+                margin: 0 auto;
+                width: 12rem;
+            }
+
+            p {
+                color: v.$primary;
+                font-family: v.$font_cursive;
+                font-size: 3.2rem;
+            }
+        }
+    }
+}

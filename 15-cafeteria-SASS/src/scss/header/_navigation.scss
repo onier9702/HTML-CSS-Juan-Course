@@ -1,0 +1,38 @@
+@use '../base/variables' as v;
+
+.navigation {
+    // color: white;
+}
+
+.navigation_ppal {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+
+    @media (min-width: 768px) { 
+        flex-direction: row;
+        gap: 1.4rem;
+        margin-top: 0;
+    }
+
+    a {
+        color: v.$white;
+        text-align: center;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 1rem;
+
+        @media (min-width: 768px) { 
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            color: v.$secondary;
+        }
+
+        &.active {
+            color: v.$secondary;
+        }
+    }
+}

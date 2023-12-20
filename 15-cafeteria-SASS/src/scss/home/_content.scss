@@ -1,0 +1,14 @@
+@use '../base/variables' as v;
+
+.content_ppal {
+    background-color: v.$white;
+    padding: 5rem 2rem;
+
+    @media (min-width: 768px) { 
+        padding: 10rem;
+        // IMPORTANT: to set the content over the header
+        position: relative;
+        margin-top: -10rem;
+    }
+}
+

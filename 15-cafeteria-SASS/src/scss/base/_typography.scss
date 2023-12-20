@@ -1,0 +1,52 @@
+@use 'variables' as v;
+
+h1, h2, h3 {
+    font-family: v.$font_ppal;
+    margin: 0 0 v.$separation 0;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    color: v.$primary;
+    font-size: 3.6rem;
+
+    span {
+        color: v.$secondary;
+        font-size: 1.8rem;
+        // IMPORTANT: to set the span below, making a break or jump line (years ago was used <br>, it is obsolet)
+        display: block;
+    }
+
+    &::after {
+        background-image: url('../img/cafe.svg');
+        background-size: 10rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        content: '';
+        display: block;
+        margin: 0 auto;
+        height: 10rem;
+        width: 10rem;
+    }
+}
+
+.h2_span_footer {
+    @extend h2;
+    color: v.$white;
+
+    span {
+        color: v.$white;
+    }
+
+    &::after {
+        display: none;
+    }
+}
+h3 {
+    font-size: 3.2rem;
+}

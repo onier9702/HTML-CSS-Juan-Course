@@ -1,0 +1,43 @@
+@use 'variables' as v;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: v.$coffe_light;
+    font-family: v.$font_secondary;
+    font-size: 1.6rem;
+}
+
+p {
+    color: v.$black;
+    font-size: 2rem;
+    line-height: 1.8;
+}
+
+.container {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

@@ -1,7 +1,7 @@
 const {src, dest, watch, series} = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const imagemin = require('gulp-imagemin');
-// import * as imagemin from "gulp-imagemin";
+const sourcemaps = require('gulp-sourcemaps');
 const webp = require('gulp-webp');
 
 
@@ -9,8 +9,10 @@ function css(done) {
 
     // Compile SASS
     src('src/scss/app.scss')
+        .pipe(sourcemaps.init())
         // .pipe(sass({outputStyle: 'compressed'}))
         .pipe(sass({outputStyle: 'expanded'}))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('build/css'));
 
     done();

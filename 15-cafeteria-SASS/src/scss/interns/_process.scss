@@ -1,0 +1,54 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.cofee_process {
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    // IMPORTANT: see how to alternate the image-text using this prop 
+    // just use order if the parent have display flex
+    &:nth-child(even) {
+        // 1st Solution
+        // .image {
+        //     order: 2;
+        // }
+        // .text {
+        //     order: 1;
+        // }
+        // 2nd solution
+        .text {
+            order: -1;
+        }
+    }
+
+    @media (min-width: 768px) { 
+        display: flex;
+        gap: v.$separation;
+        align-items: center;
+    }
+
+    .image, .text {
+        flex: 1;
+    }
+
+    .text {
+        margin-top: 1rem;
+
+        h3 {
+            color: v.$primary;
+            margin: 0;
+            text-align: left;
+
+            &::after {
+                background-color: v.$secondary;
+                content: '';
+                display: block;
+                height: 4px;
+                width: 50%;
+            }
+        }
+    }
+}

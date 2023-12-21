@@ -1,0 +1,33 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.menu_content {
+    background-image: url(../img/cafe.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    // IMPORTANT: new property CSS called aspect-ratio
+    aspect-ratio: 3 / 7;
+
+    @media (min-width: 340px) { 
+        aspect-ratio: 3 / 5;
+    }
+    @media (min-width: 768px) { 
+        @include m.grid(2, v.$separation);
+        background-size: 50%;
+        background-position: bottom right;
+        aspect-ratio: 16 / 7;
+    }
+
+    @media (min-width: 980px) { 
+        background-size: 40%;
+    }
+
+    .text {
+
+        p {
+            font-size: 2rem;
+        }
+    }
+
+}

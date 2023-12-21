@@ -4,6 +4,8 @@
 .header {
     padding: 5rem 0;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     @media (min-width: 768px) { 
         min-height: 60rem;
@@ -43,5 +45,20 @@
 // Header from every page
 .header_home {
     background-image: url('../img/header_inicio.jpg');
+}
+.header_about {
+    background-image: url('../img/header_nosotros.jpg');
+}
+.header_process {
+    background-image: url('../img/header_proceso.jpg');
+}
+.header_menu {
+    background-image: url('../img/header_menu.jpg');
+}
+.header_gallery {
+    background-image: url('../img/header_galeria.jpg');
+}
+.header_contact {
+    background-image: url('../img/header_contacto.jpg');
 }
 

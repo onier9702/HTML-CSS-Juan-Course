@@ -45,7 +45,7 @@ a {
     text-decoration: none;
     color: #000;
 }
-.contenedor {
+.container {
     max-width: 120rem;
     margin: 0 auto;
 }
@@ -87,7 +87,7 @@ img {
 .nombre-sitio span {
     color: #037bc0;
 }
-.contenedor-navegacion {
+.container-navegacion {
     border-top: .1rem solid #e1e1e1;
 }
 .nav-principal {
@@ -332,7 +332,7 @@ img {
 
 /** Blog */
 @media (min-width: 768px) { 
-    .contenedor-blog {
+    .container-blog {
         display: grid;
         grid-template-columns: 2fr 1fr;
         column-gap: 4rem;

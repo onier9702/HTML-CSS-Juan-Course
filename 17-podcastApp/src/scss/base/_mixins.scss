@@ -1,0 +1,81 @@
+@use 'variables' as v; 
+
+/** Media Queries **/
+@mixin phone {
+    @media (min-width: v.$phone) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+
+@mixin button($color, $text) {
+    background-color: $color;
+    font-size: 2rem;
+    padding: 1.2rem 4rem;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: $text;
+    text-decoration: none;
+    transition: background-color .3s ease;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken($color, 10);
+    }
+
+    @include tablet {
+        width: auto;
+        display: inline-block;
+        
+    }
+}
+
+@mixin grid($columns, $espace ) {
+    display: grid;
+    gap: $espace;
+    grid-template-columns: repeat($columns, 1fr);
+}
+
+@mixin borderHeading($colorText, $colorLine) {
+    color: $colorText;
+    font-size: 3.2rem;
+    margin-top: 4rem;
+    @media (min-width: 768px) { 
+        margin-top: 0;
+    }
+    // IMPORTANT: this property cut the line to the width of the h2 text
+    display: inline-block;
+    
+    // IMPORTANT: the line below the h2 text
+    &::after {
+        display: block;
+        content: '';
+        background-color: $colorLine;
+        height: 1rem;
+        margin: -1.4rem 0 0 0;
+        width: calc(100% + 1rem);
+    }
+}
+
+@mixin bgImage($url) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    // IMPORTANT: this position property the first value is horizontally and the second value is vertically
+    background-position: 50% 2rem;
+    background-size: 10rem;
+}

@@ -1,0 +1,33 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.benefits {
+    background-color: v.$primary;
+
+    .grid_benefits {
+        @media (min-width: 768px) { 
+            @include m.grid(5, 4rem);
+            align-items: center;
+        }
+
+
+        .content{
+            grid-column: 1 / 4;
+
+            h2 {
+                @include m.borderHeading(v.$secondary, v.$white);
+            }
+        }
+
+        .image{
+            grid-column: 4 / 6;
+            transition-property: rotate scale;
+            transition-duration: .5s;
+
+            &:hover {
+                transform: rotate(8deg) scale(1.1);
+            }
+        }
+
+    }
+}

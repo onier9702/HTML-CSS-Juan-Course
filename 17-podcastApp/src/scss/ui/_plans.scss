@@ -1,0 +1,86 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.plans {
+    background-color: v.$secondary;
+
+    h2 {
+        @include m.borderHeading(v.$white, v.$primary);
+    }
+    .description {
+        color: v.$white;
+    }
+}
+
+.our_plans {
+    display: flex;
+    flex-direction: column;
+    max-width: 80rem;
+    margin: 8rem auto 0 auto;
+
+    @media (min-width: 768px) { 
+        flex-direction: row;
+    }
+
+    .plan {
+        background-color: v.$white;
+        flex-grow: 1;
+        padding: 15rem 2rem 2rem 2rem;
+
+        @media (min-width: 768px) { 
+            transition-property: transform;
+            transition-duration: .4s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .price {
+            font-size: 1.8rem;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .list {
+
+            li {
+                text-align: center;
+                margin-top: 2rem;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &.init {
+            @include m.bgImage('../img/icono_inicio.svg');
+        }
+
+        &.business {
+            background-color: v.$primary;
+            @include m.bgImage('../img/icono_negocio.svg');
+        }
+
+        &.pro {
+            @include m.bgImage('../img/icono_pro.svg');
+        }
+
+        &.business {
+            order: -1;
+
+            @media (min-width: 768px) { 
+                border-radius: 12px;
+                order: unset;
+                margin: -5rem 0;
+                // IMPORTANT: to get three images and text align 
+                background-position: 50% 7rem;
+                padding-top: 20rem;
+                // IMPORTANT: to get the business plan over the others one
+                z-index: 100;
+            }
+        }
+    }
+}

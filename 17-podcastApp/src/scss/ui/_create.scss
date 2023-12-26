@@ -1,0 +1,27 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.create_grid {
+
+    @media (min-width: 768px) { 
+        @include m.grid(2, 2rem);
+        align-items: center;
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-width: 80%;
+        }
+
+    }
+
+    .content {
+
+        h2 {
+            @include m.borderHeading(v.$secondary, v.$primary);
+        }
+    }
+}
